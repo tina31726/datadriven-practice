@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [Cloud Cost Trend Analysis](./practice/sql/cloud-cost-trend-analysis) | SQL | Medium | 2026-10-19 |
 | [7-Check Rolling Average](./practice/sql/7-check-rolling-average) | SQL | Medium | 2026-10-19 |
 | [The Word Count Shuffle Trap](./practice/spark/the-word-count-shuffle-trap) | Spark | Easy | 2026-10-19 |
 | [Bronze Medal](./practice/sql/bronze-medal) | SQL | Easy | 2026-10-19 |
