@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [The Word Count Shuffle Trap](./practice/spark/the-word-count-shuffle-trap) | Spark | Easy | 2026-10-19 |
 | [Bronze Medal](./practice/sql/bronze-medal) | SQL | Easy | 2026-10-19 |
 
 <!-- datadriven:index:end -->
