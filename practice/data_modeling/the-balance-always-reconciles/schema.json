@@ -1,0 +1,151 @@
+{
+  "tables": [
+    {
+      "name": "loan",
+      "columns": [
+        {
+          "name": "loan_id",
+          "type": "VARCHAR",
+          "key": "pk"
+        },
+        {
+          "name": "interest_rate",
+          "type": "FLOAT"
+        },
+        {
+          "name": "term_length",
+          "type": "INT"
+        },
+        {
+          "name": "product_id",
+          "type": "VARCHAR",
+          "key": "fk"
+        }
+      ]
+    },
+    {
+      "name": "account",
+      "columns": [
+        {
+          "name": "account_id",
+          "type": "VARCHAR",
+          "key": "pk"
+        },
+        {
+          "name": "balance",
+          "type": "INT"
+        },
+        {
+          "name": "amount",
+          "type": "INT"
+        },
+        {
+          "name": "due date",
+          "type": "DATE"
+        }
+      ]
+    },
+    {
+      "name": "transction",
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "key": "pk"
+        },
+        {
+          "name": "amount",
+          "type": "INT"
+        },
+        {
+          "name": "date",
+          "type": "DATE"
+        }
+      ]
+    },
+    {
+      "name": "customer_loan",
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "loan_id",
+          "type": "VARCHAR",
+          "key": "fk"
+        },
+        {
+          "name": "transaction_id",
+          "type": "VARCHAR",
+          "key": "fk"
+        },
+        {
+          "name": "account_id",
+          "type": "VARCHAR",
+          "key": "fk"
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "VARCHAR",
+          "key": "pk"
+        },
+        {
+          "name": "loan_type",
+          "type": "VARCHAR"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": {
+        "table": "customer_loan",
+        "column": "loan_id"
+      },
+      "to": {
+        "table": "loan",
+        "column": "loan_id"
+      },
+      "foreign_key": true
+    },
+    {
+      "from": {
+        "table": "customer_loan",
+        "column": "loan_id"
+      },
+      "to": {
+        "table": "transction",
+        "column": "transaction_id"
+      },
+      "foreign_key": true
+    },
+    {
+      "from": {
+        "table": "loan",
+        "column": "product_id"
+      },
+      "to": {
+        "table": "Product",
+        "column": "product_id"
+      },
+      "foreign_key": true
+    },
+    {
+      "from": {
+        "table": "customer_loan",
+        "column": "account_id"
+      },
+      "to": {
+        "table": "account",
+        "column": "account_id"
+      },
+      "foreign_key": true
+    }
+  ]
+}
