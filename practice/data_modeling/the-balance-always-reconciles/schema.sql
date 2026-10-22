@@ -1,47 +1,43 @@
 CREATE TABLE loan (
-    loan_id VARCHAR,
-    interest_rate FLOAT,
-    term_length INT,
-    product_id VARCHAR,
+    loan_id TEXT,  /* no type on the canvas */
+    customer_id TEXT,  /* no type on the canvas */
+    load_type_id TEXT,  /* no type on the canvas */
+    origination_date TEXT,  /* no type on the canvas */
+    principal_amount TEXT,  /* no type on the canvas */
+    status TEXT,  /* no type on the canvas */
     PRIMARY KEY (loan_id)
 );
 
-CREATE TABLE account (
-    account_id VARCHAR,
-    balance INT,
-    amount INT,
-    "due date" DATE,
-    PRIMARY KEY (account_id)
+CREATE TABLE loan_type (
+    load_type_id TEXT,  /* no type on the canvas */
+    product_name TEXT,  /* no type on the canvas */
+    default_rate TEXT,  /* no type on the canvas */
+    default_term_months TEXT,  /* no type on the canvas */
+    PRIMARY KEY (load_type_id)
 );
 
-CREATE TABLE transction (
-    transaction_id VARCHAR,
-    amount INT,
-    date DATE,
-    PRIMARY KEY (transaction_id)
+CREATE TABLE customer (
+    customer_id TEXT,  /* no type on the canvas */
+    customer_name TEXT,  /* no type on the canvas */
+    customer_email TEXT,  /* no type on the canvas */
+    joined_at TEXT,  /* no type on the canvas */
+    PRIMARY KEY (customer_id)
 );
 
-CREATE TABLE customer_loan (
-    customer_id VARCHAR,
-    loan_id VARCHAR,
-    transaction_id VARCHAR,
-    account_id VARCHAR
+CREATE TABLE transaction (
+    transaction TEXT,  /* no type on the canvas */
+    load_id TEXT,  /* no type on the canvas */
+    paid_amount TEXT,  /* no type on the canvas */
+    paid_date TEXT,  /* no type on the canvas */
+    type TEXT,  /* no type on the canvas */
+    PRIMARY KEY (transaction)
 );
-
-CREATE TABLE Product (
-    product_id VARCHAR,
-    loan_type VARCHAR,
-    PRIMARY KEY (product_id)
-);
-
-ALTER TABLE customer_loan
-    ADD FOREIGN KEY (loan_id) REFERENCES loan (loan_id);
-
-ALTER TABLE customer_loan
-    ADD FOREIGN KEY (loan_id) REFERENCES transction (transaction_id);
 
 ALTER TABLE loan
-    ADD FOREIGN KEY (product_id) REFERENCES Product (product_id);
+    ADD FOREIGN KEY (load_type_id) REFERENCES loan_type (load_type_id);
 
-ALTER TABLE customer_loan
-    ADD FOREIGN KEY (account_id) REFERENCES account (account_id);
+ALTER TABLE loan
+    ADD FOREIGN KEY (customer_id) REFERENCES customer (customer_id);
+
+ALTER TABLE transaction
+    ADD FOREIGN KEY (load_id) REFERENCES loan (loan_id);

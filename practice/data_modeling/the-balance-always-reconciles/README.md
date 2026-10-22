@@ -18,36 +18,35 @@
 ```mermaid
 erDiagram
     loan {
-        VARCHAR loan_id PK
-        FLOAT interest_rate
-        INT term_length
-        VARCHAR product_id FK
+        unspecified loan_id PK
+        unspecified customer_id FK
+        unspecified load_type_id FK
+        unspecified origination_date
+        unspecified principal_amount
+        unspecified status
     }
-    account {
-        VARCHAR account_id PK
-        INT balance
-        INT amount
-        DATE due_date
+    loan_type {
+        unspecified load_type_id PK
+        unspecified product_name
+        unspecified default_rate
+        unspecified default_term_months
     }
-    transction {
-        VARCHAR transaction_id PK
-        INT amount
-        DATE date
+    customer {
+        unspecified customer_id PK
+        unspecified customer_name
+        unspecified customer_email
+        unspecified joined_at
     }
-    customer_loan {
-        VARCHAR customer_id
-        VARCHAR loan_id FK
-        VARCHAR transaction_id FK
-        VARCHAR account_id FK
+    transaction {
+        unspecified transaction PK
+        unspecified load_id FK
+        unspecified paid_amount
+        unspecified paid_date
+        unspecified type
     }
-    Product {
-        VARCHAR product_id PK
-        VARCHAR loan_type
-    }
-    loan only one optionally to zero or more customer_loan : "loan_id"
-    transction only one optionally to zero or more customer_loan : "loan_id = transaction_id"
-    Product only one optionally to zero or more loan : "product_id"
-    account only one optionally to zero or more customer_loan : "account_id"
+    loan_type only one optionally to zero or more loan : "load_type_id"
+    customer only one optionally to zero or more loan : "customer_id"
+    loan only one optionally to zero or more transaction : "load_id = loan_id"
 ```
 
 The accepted design is in [`schema.sql`](./schema.sql) as DDL and in [`schema.json`](./schema.json) as JSON.
