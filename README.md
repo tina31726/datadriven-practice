@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [The Long Run](./practice/python/the-long-run) | Python | Easy | 2026-10-22 |
 | [The Rolling Peak](./practice/python/the-rolling-peak) | Python | Medium | 2026-10-22 |
 | [The Window Cleaner](./practice/python/the-window-cleaner) | Python | Medium | 2026-10-22 |
 | [The Row Count Surprise](./practice/sql/the-row-count-surprise) | SQL | Easy | 2026-10-19 |
