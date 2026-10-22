@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [The Rolling Peak](./practice/python/the-rolling-peak) | Python | Medium | 2026-10-22 |
 | [The Window Cleaner](./practice/python/the-window-cleaner) | Python | Medium | 2026-10-22 |
 | [The Row Count Surprise](./practice/sql/the-row-count-surprise) | SQL | Easy | 2026-10-19 |
 | [Cloud Cost Trend Analysis](./practice/sql/cloud-cost-trend-analysis) | SQL | Medium | 2026-10-19 |
