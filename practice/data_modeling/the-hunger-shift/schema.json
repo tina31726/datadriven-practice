@@ -1,0 +1,108 @@
+{
+  "tables": [
+    {
+      "name": "dish_order",
+      "columns": [
+        {
+          "name": "dish_id",
+          "key": "pk"
+        },
+        {
+          "name": "dish_type_id",
+          "key": "fk"
+        },
+        {
+          "name": "order_id",
+          "key": "fk"
+        },
+        {
+          "name": "total_amount"
+        }
+      ]
+    },
+    {
+      "name": "Dish type",
+      "columns": [
+        {
+          "name": "dish_type_id",
+          "key": "pk"
+        },
+        {
+          "name": "dish_name"
+        }
+      ]
+    },
+    {
+      "name": "restaurant",
+      "columns": [
+        {
+          "name": "restaurant_id",
+          "key": "pk"
+        },
+        {
+          "name": "city"
+        }
+      ]
+    },
+    {
+      "name": "order",
+      "columns": [
+        {
+          "name": "order_id",
+          "key": "pk"
+        },
+        {
+          "name": "restuarant_id",
+          "key": "fk"
+        },
+        {
+          "name": "paid_date"
+        },
+        {
+          "name": "total_amount"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": {
+        "table": "dish_order",
+        "column": "dish_type_id",
+        "cardinality": "many"
+      },
+      "to": {
+        "table": "Dish type",
+        "column": "dish_type_id",
+        "cardinality": "one"
+      },
+      "foreign_key": true
+    },
+    {
+      "from": {
+        "table": "dish_order",
+        "column": "order_id",
+        "cardinality": "many"
+      },
+      "to": {
+        "table": "order",
+        "column": "order_id",
+        "cardinality": "one"
+      },
+      "foreign_key": true
+    },
+    {
+      "from": {
+        "table": "order",
+        "column": "restuarant_id",
+        "cardinality": "many"
+      },
+      "to": {
+        "table": "restaurant",
+        "column": "restaurant_id",
+        "cardinality": "one"
+      },
+      "foreign_key": true
+    }
+  ]
+}
