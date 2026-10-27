@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "id": "s_1793132691358_0",
+      "name": "source",
+      "type": "source",
+      "tech": "MongoDB",
+      "position": {
+        "x": 91,
+        "y": 94
+      }
+    },
+    {
+      "id": "s_1793132763830_1",
+      "name": "redshift",
+      "type": "storage",
+      "position": {
+        "x": 97,
+        "y": 92
+      }
+    },
+    {
+      "id": "s_1793133040508_8",
+      "name": "CDC",
+      "type": "storage",
+      "position": {
+        "x": 94,
+        "y": 99
+      }
+    },
+    {
+      "id": "s_1793133071401_9",
+      "name": "normalization",
+      "type": "transform",
+      "position": {
+        "x": 96,
+        "y": 95
+      }
+    },
+    {
+      "id": "s_1793133111274_12",
+      "name": "queue",
+      "type": "queue",
+      "tech": "Kafka",
+      "position": {
+        "x": 98,
+        "y": 98
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "s_1793132691358_0",
+      "to": "s_1793133040508_8",
+      "type": "data_flow"
+    },
+    {
+      "from": "s_1793133071401_9",
+      "to": "s_1793132763830_1",
+      "type": "data_flow"
+    },
+    {
+      "from": "s_1793133040508_8",
+      "to": "s_1793133111274_12",
+      "type": "data_flow"
+    },
+    {
+      "from": "s_1793133111274_12",
+      "to": "s_1793133071401_9",
+      "type": "data_flow"
+    }
+  ],
+  "zones": []
+}
