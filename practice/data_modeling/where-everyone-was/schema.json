@@ -1,0 +1,19 @@
+{
+  "tables": [
+    {
+      "name": "customer",
+      "columns": [
+        {
+          "name": "name"
+        },
+        {
+          "name": "address"
+        },
+        {
+          "name": "effective_date"
+        }
+      ]
+    }
+  ],
+  "relationships": []
+}

@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [Where Everyone Was](./practice/data_modeling/where-everyone-was) | Data Modeling | Easy | 2026-10-27 |
 | [The Hunger Shift](./practice/data_modeling/the-hunger-shift) | Data Modeling | Medium | 2026-10-22 |
 | [The Balance Always Reconciles](./practice/data_modeling/the-balance-always-reconciles) | Data Modeling | Easy | 2026-10-22 |
 | [10 Lowest Uptime Services](./practice/sql/10-lowest-uptime-services) | SQL | Medium | 2026-10-22 |
