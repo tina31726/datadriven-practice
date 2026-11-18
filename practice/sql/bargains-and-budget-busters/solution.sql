@@ -9,8 +9,6 @@ select svc_name, region, amount
 select *, row_number() over (partition by region order by amount desc) max_rn,  row_number() over (partition by region order by amount) min_rn
   from all_items)
   
-  select a.region, a.svc_name as most_expensive,b.svc_name as cheapest
-    from cte a
-    left join cte b
-    on a.region =b.region
-    where a.max_rn=1 and b.min_rn=1
+  select region, max(case when max_rn=1 then svc_name end) as most_expensive, max(case when min_rn=1 then svc_name end) as cheapest
+    from cte
+    group by region
