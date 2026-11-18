@@ -8,6 +8,7 @@ Scored work from [DataDriven](https://datadriven.io/u/stellar_echo_6779), commit
 
 | Problem | Domain | Difficulty | Solved |
 |---|---|---|---|
+| [Daily Error Count Change](./practice/sql/daily-error-count-change) | SQL | Medium | 2026-11-18 |
 | [Bargains and Budget-Busters](./practice/sql/bargains-and-budget-busters) | SQL | Medium | 2026-11-18 |
 | [All at Once](./practice/pipeline_architecture/all-at-once) | Pipeline Architecture | Medium | 2026-10-27 |
 | [Where Everyone Was](./practice/data_modeling/where-everyone-was) | Data Modeling | Easy | 2026-10-27 |
